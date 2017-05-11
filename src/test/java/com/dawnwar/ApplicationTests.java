@@ -1,6 +1,6 @@
 package com.dawnwar;
 
-import com.dawnwar.web.ComputeController;
+import com.dawnwar.web.ClientController;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -28,7 +28,7 @@ public class ApplicationTests {
 
 	@Before
 	public void setUp() throws Exception {
-		mvc = MockMvcBuilders.standaloneSetup(new ComputeController()).build();
+		mvc = MockMvcBuilders.standaloneSetup(new ClientController()).build();
 	}
 
 	@Test

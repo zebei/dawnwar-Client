@@ -1,6 +1,7 @@
 package com.dawnwar.web;
 
-import org.apache.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
@@ -10,11 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+
+@Slf4j
 @RefreshScope
 @RestController
 public class ClientController {
 
-    private final Logger logger = Logger.getLogger(getClass());
 
     @Autowired
     private DiscoveryClient client;
@@ -23,7 +26,7 @@ public class ClientController {
     public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
         ServiceInstance instance = client.getLocalServiceInstance();
         Integer r = a + b;
-        logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
+        log.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
         return r;
     }
     

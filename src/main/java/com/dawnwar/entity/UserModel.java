@@ -18,5 +18,10 @@ public class UserModel implements Serializable {
 		this.name = name;
 		this.age = age;
 	}
+	public UserModel(Long id,String name,Integer age){
+		this.id=id;
+		this.name=name;
+		this.age=age;
+	}
 
 }

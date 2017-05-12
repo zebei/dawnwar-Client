@@ -22,6 +22,7 @@ public class ClientController {
     @Autowired
     private DiscoveryClient client;
 
+
     @RequestMapping(value = "/add" ,method = RequestMethod.GET)
     public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
         ServiceInstance instance = client.getLocalServiceInstance();
@@ -46,5 +47,6 @@ public class ClientController {
     public String getFrom() {
         return from;
     }
+   
 
 }

@@ -3,6 +3,8 @@ dawnwar by zebei
 注册服务 各类基础服务
 spring-cloud client service
 
+5-15-1 
+eventbus
 
 5-11-2
 通过“POST”请求发送到http://localhost:7002/refresh 刷新配置文件

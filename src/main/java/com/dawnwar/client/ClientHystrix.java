@@ -1,4 +1,4 @@
-package com.dawnwar.client;
+/*package com.dawnwar.client;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,3 +10,4 @@ public class ClientHystrix implements ClientRemoteClient {
         return -9999;
     }
 }
+*/

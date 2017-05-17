@@ -10,13 +10,11 @@ import com.google.common.eventbus.Subscribe;
 @Component
 public class UserEventListener implements EventListener {
 
-    @Subscribe
-    public void userCreateEvent(UserEvent userEvent) {
-    	
-    	log.info("User create event, id:{}", userEvent.id);
-    	
-    }
-    
- 
-    
+	@Subscribe
+	public void userCreateEvent(UserEvent userEvent) {
+
+		log.info("User create event, id:{}", userEvent.id);
+
+	}
+
 }

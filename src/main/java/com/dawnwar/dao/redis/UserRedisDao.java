@@ -1,4 +1,4 @@
-package com.dawnwar.dao.redis;
+/*package com.dawnwar.dao.redis;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -46,3 +46,4 @@ public class UserRedisDao extends BaseRedisConfig<UserModel> {
     
    
 }
+*/

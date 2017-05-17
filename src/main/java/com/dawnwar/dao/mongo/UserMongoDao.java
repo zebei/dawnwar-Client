@@ -1,4 +1,4 @@
-package com.dawnwar.dao.mongo;
+/*package com.dawnwar.dao.mongo;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,3 +25,4 @@ public class UserMongoDao{
 		
 	}
 }
+*/

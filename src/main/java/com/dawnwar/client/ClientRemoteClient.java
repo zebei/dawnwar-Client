@@ -1,4 +1,4 @@
-package com.dawnwar.client;
+/*package com.dawnwar.client;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,3 +14,4 @@ public interface ClientRemoteClient {
 	 public Integer add(@RequestParam Integer a, @RequestParam Integer b); 
 	
 }
+*/

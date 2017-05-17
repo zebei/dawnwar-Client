@@ -1,4 +1,4 @@
-package com.dawnwar.dao.redis;
+/*package com.dawnwar.dao.redis;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.serializer.support.DeserializingConverter;
@@ -40,4 +40,4 @@ public class RedisObjectSerializer implements RedisSerializer<Object> {
   private boolean isEmpty(byte[] data) {
     return (data == null || data.length == 0);
   }
-}
+}*/

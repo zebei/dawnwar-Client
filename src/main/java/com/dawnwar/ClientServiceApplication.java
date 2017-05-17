@@ -17,7 +17,7 @@ public class ClientServiceApplication {
 		long time = endTime - starTime;
 		System.out.println("\nStart Time: " + time / 1000 + " s");
 		System.out.println("...............................................................");
-		System.out.println("..........Client Service starts successfully............");
+		System.out.println(".............Client Service starts successfully................");
 		System.out.println("...............................................................");
 	}
 

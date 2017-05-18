@@ -5,7 +5,7 @@ import java.io.Serializable;
 import lombok.Data;
 
 @Data
-public class UserModel implements Serializable {
+public class User implements Serializable {
 	/**
 	 * 
 	 */
@@ -14,11 +14,11 @@ public class UserModel implements Serializable {
 	private String name;
 	private Integer age;
 
-	public UserModel(String name, Integer age) {
+	public User(String name, Integer age) {
 		this.name = name;
 		this.age = age;
 	}
-	public UserModel(Long id,String name,Integer age){
+	public User(Long id,String name,Integer age){
 		this.id=id;
 		this.name=name;
 		this.age=age;

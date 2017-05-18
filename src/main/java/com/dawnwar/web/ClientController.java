@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dawnwar.dao.mysql.UserDao;
+import com.dawnwar.entity.User;
+
 
 @Slf4j
 @RefreshScope
@@ -21,7 +24,8 @@ public class ClientController {
 
     @Autowired
     private DiscoveryClient client;
-
+    @Autowired
+    private UserDao userDao;
 
     @RequestMapping(value = "/add" ,method = RequestMethod.GET)
     public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
@@ -36,7 +40,7 @@ public class ClientController {
 
     @RequestMapping("/from")
     public String from() {
-
+    	log.info("FROM");
         return this.from;
     }
 
@@ -46,6 +50,12 @@ public class ClientController {
 
     public String getFrom() {
         return from;
+    }
+    @RequestMapping("/user")
+    public User user() {
+    	log.info("USER");
+    	return userDao.load(1);
+        
     }
    
 

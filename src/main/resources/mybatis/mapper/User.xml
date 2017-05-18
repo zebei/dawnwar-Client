@@ -3,8 +3,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="User">
-	<resultMap id="UserMap" type="UserModel">
-        <id column="id" property="id"/>
+	<resultMap id="UserMap" type="User">
+		<id column="id" property="id"/>
         <result column="name" property="name"/>
         <result column="age" property="age"/>
     </resultMap>
@@ -24,14 +24,14 @@
         #{name}, #{age}
     </sql>
 	<sql id="criteria">
-        WHERE status = 1
+        WHERE 
         <if test="id != null"> AND id = #{id} </if>
         <if test="name != null"> AND name LIKE CONCAT('%', #{name} ,'%') </if>
         <if test="age != null"> AND age = #{age} </if>
     </sql>
     
 	<select id="load" parameterType="long" resultMap="UserMap" >
-        SELECT <include refid="cols_all"/> 
+        SELECT id, <include refid="cols_exclude_id"/> 
         FROM <include refid="tb"/> 
         WHERE id = #{id} LIMIT 1
     </select>
@@ -50,7 +50,7 @@
     </select>
     
     
-    <insert id="create" parameterType="UserModel" keyProperty="id" useGeneratedKeys="true">
+    <insert id="create" parameterType="User" keyProperty="id" useGeneratedKeys="true">
 		INSERT INTO
         <include refid="tb" />
         (<include refid="cols_exclude_id" />)
@@ -58,7 +58,7 @@
         (<include refid="vals" /> )    
     </insert>
     
-    <update id="update" parameterType="UserModel">
+    <update id="update" parameterType="User">
         UPDATE <include refid="tb"/>
         <set>
             <if test="name != null"> name = #{name}, </if>
@@ -67,7 +67,7 @@
         WHERE id = #{id}
     </update>
    
-     <select id="findInUserIds" parameterType="list" resultMap="UserModel">
+     <select id="findInUserIds" parameterType="list" resultMap="User">
         SELECT <include refid="cols_all"/>
         FROM <include refid="tb"/>
         WHERE id IN

@@ -19,6 +19,6 @@
         <package name="com.dawnwar.entity"/>
     </typeAliases>
     <mappers>
-        <mapper resource="mybatis/mapper/UserMapper.xml"/>
+        <mapper resource="mybatis/mapper/User.xml"/>
     </mappers>
 </configuration>

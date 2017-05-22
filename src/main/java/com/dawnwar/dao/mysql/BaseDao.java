@@ -163,7 +163,6 @@ public abstract class BaseDao<T> extends SqlSessionDaoSupport {
 	}
 
 	protected String sqlId(String id) {
-		System.out.println(this.nameSpace + "." + id);
 		return this.nameSpace + "." + id;
 	}
 }

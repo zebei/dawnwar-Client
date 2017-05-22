@@ -30,7 +30,7 @@ public class ClientController {
     @RequestMapping(value = "/add" ,method = RequestMethod.GET)
     public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
         ServiceInstance instance = client.getLocalServiceInstance();
-        Integer r = a + b;
+        Integer r = a + b+a;
         log.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
         return r;
     }
@@ -53,7 +53,6 @@ public class ClientController {
     }
     @RequestMapping("/user")
     public User user() {
-    	log.info("USER");
     	return userDao.load(1);
         
     }

@@ -105,6 +105,13 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-stream-binder-rabbit</artifactId>
 		</dependency> -->
+		
+		<!-- dependencys里面添加依赖 热更新 -->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+		</dependency>
 
 	</dependencies>
 

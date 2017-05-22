@@ -1,5 +1,8 @@
 package com.dawnwar.web;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,10 +54,14 @@ public class ClientController {
     public String getFrom() {
         return from;
     }
-    @RequestMapping("/user")
-    public User user() {
-    	return userDao.load(1);
-        
+    @RequestMapping(value="/user")
+    public List<User> user() {
+//    	return userDao.load(1);
+    	List<Long> useridlist=new ArrayList<Long>();
+    	useridlist.add(3l);
+    	useridlist.add(1l);
+    	useridlist.add(2l);
+        return userDao.findInUserIds(useridlist);
     }
    
 

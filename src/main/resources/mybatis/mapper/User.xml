@@ -35,7 +35,7 @@
         FROM <include refid="tb"/> 
         WHERE id = #{id} LIMIT 1
     </select>
-    <!--
+   
     <select id="list" parameterType="map" resultMap="UserMap">
         SELECT
         <include refid="cols_all"/>
@@ -48,7 +48,6 @@
         <include refid="cols_all"/>
         FROM <include refid="tb"/>
     </select>
-    
     
     <insert id="create" parameterType="User" keyProperty="id" useGeneratedKeys="true">
 		INSERT INTO
@@ -66,8 +65,8 @@
         </set>
         WHERE id = #{id}
     </update>
-   
-      <select id="findInUserIds" parameterType="list" resultMap="User">
+
+    <select id="findInUserIds" parameterType="list" resultMap="UserMap">
         SELECT <include refid="cols_all"/>
         FROM <include refid="tb"/>
         WHERE id IN
@@ -75,14 +74,12 @@
                  item="id">
             #{id}
         </foreach>
-        AND status = 1
        ORDER BY FIELD(id,
        <foreach collection="list" open="" separator="," close=""
                  item="id">
             #{id}
         </foreach>
         ) 
-        
-    </select> -->
+    </select> 
     
 </mapper>

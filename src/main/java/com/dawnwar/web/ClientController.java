@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dawnwar.dao.mysql.UserDao;
 import com.dawnwar.entity.User;
+import com.dawnwar.mq.producer.RabbitMqProducer;
 
 
 @Slf4j
@@ -29,6 +30,8 @@ public class ClientController {
     private DiscoveryClient client;
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private RabbitMqProducer sender;
 
     @RequestMapping(value = "/add" ,method = RequestMethod.GET)
     public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
@@ -63,6 +66,9 @@ public class ClientController {
     	useridlist.add(2l);
         return userDao.findInUserIds(useridlist);
     }
-   
-
+    
+    @RequestMapping(value="/sendmq")
+    public void sendmq() {
+    	sender.send("lalalalal ");
+    }
 }

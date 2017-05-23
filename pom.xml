@@ -50,10 +50,10 @@
 		</dependency>
 		
 		<!-- 消息总线依赖 -->
-		<!-- <dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
-		</dependency> -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
 		
 		<!-- 日志logback依赖 -->
 		<dependency>
@@ -104,14 +104,14 @@
 		<!-- <dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-stream-binder-rabbit</artifactId>
-		</dependency> -->
+		</dependency>-->
 		
 		<!-- dependencys里面添加依赖 热更新 -->
-		<dependency>
+		<!-- <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
-		</dependency>
+		</dependency> -->
 
 	</dependencies>
 
